@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="login-card">
+      <div class="logo">
+        <i class="fa-solid fa-desktop"></i>
+      </div>
+      <h1>Sistem Peminjaman<br />Laboratorium PC</h1>
+      <p>Silakan login untuk melanjutkan</p>
+      <form action="/login" method="post">
+        <label>NIM</label>
+        <div class="input-group">
+          <span><i class="fa-solid fa-id-card"></i></span>
+          <input type="text" name="nim" placeholder="Masukkan NIM" required />
+        </div>
+        <label>Password</label>
+        <div class="input-group">
+          <span><i class="fa-solid fa-lock"></i></span>
+          <input type="password" id="password" name="password" placeholder="Masukkan password" required />
+
+          <button type="button" class="show-password" onclick="togglePassword()">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+
+        <button class="login-btn"><i class="fa-solid fa-right-to-bracket"></i>Login</button>
+      </form>
+
+      <div class="register">Belum punya akun?<a th:href="@{/register}">Daftar</a></div>
+    </div>
+
+    <script th:src="@{/javascript/login.js}"></script>
+  </body>
+</html>
